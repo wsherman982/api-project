@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Logs</title>
+</head>
+<body>
+
+<h1>Logs</h1>
+
+<form action="/search" method="get">
+    <input type="text" name="q" placeholder="Search endpoint...">
+    <button type="submit">Search</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>API Name</th>
+        <th>Endpoint</th>
+        <th>Status</th>
+        <th>Error Type</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.api_name }}</td>
+        <td>{{ row.endpoint }}</td>
+        <td>{{ row.status_code }}</td>
+        <td>{{ row.error_type }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
